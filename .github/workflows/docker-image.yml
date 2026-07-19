@@ -60,7 +60,7 @@ jobs:
         uses: docker/metadata-action@v5
 
         with:
-          images: ghcr.io/mtvpls/moontvplus
+          images: ghcr.io/sharksong1/moontvplus
           tags: |
             type=raw,value=${{ github.event.inputs.tag || 'latest' }},enable={{is_default_branch}}
 
@@ -72,8 +72,8 @@ jobs:
           file: ./Dockerfile
           platforms: ${{ matrix.platform }}
           labels: ${{ steps.meta.outputs.labels }}
-          tags: ghcr.io/mtvpls/moontvplus:${{ github.event.inputs.tag || 'latest' }}
-          outputs: type=image,name=ghcr.io/mtvpls/moontvplus,name-canonical=true,push=true
+          tags: ghcr.io/sharksong1/moontvplus:${{ github.event.inputs.tag || 'latest' }}
+          outputs: type=image,name=ghcr.io/sharksong1/moontvplus,name-canonical=true,push=true
 
       - name: Export digest
         run: |
