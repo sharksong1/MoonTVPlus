@@ -288,7 +288,7 @@ function patchSsrNodeRoutes() {
   const originalRoutes = Array.isArray(config.routes) ? config.routes : [];
   // Drop previous patches / weak API rules; keep other generated rules.
   const routes = originalRoutes.filter(
-    (route) => !isApiRouteRule(route) && !isCatchAllRoute(route)
+   (route) => !isCatchAllRoute(route));
   );
 
   let filesystemIdx = routes.findIndex((route) => route && route.handle === 'filesystem');
